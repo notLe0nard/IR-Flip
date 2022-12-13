@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IR-FLIP</title>
+    <audio src="all-power.wav"       id="tv/all"></audio>
+    <audio src="lg-power.wav"        id="tv/lg"></audio>
+    <audio src="samsung-power.wav"   id="tv/samsung"></audio>
+    <audio src="sony-power.wav"      id="tv/sony"></audio>
+    <audio src="panasonic-power.wav" id="tv/panasonic"></audio>
+    <audio src="grundig-power.wav"   id="tv/grundig"></audio>
+    <audio src="philips-power.wav"   id="tv/philips"></audio>
+
+    <audio src="led-power.wav"   id="led/power"></audio>
+
+    <audio src="projektor-power.wav"  id="projektor/power"></audio>
+    
+
+
+</head>
+<body>
+
+    <img src="back_selected.png" alt="" id="back_btn" onclick="reset()"> 
+
+<div id="main_menu">
+    <center>
+            <p id="main_menu_text">Please select device:</p>
+
+            <img src="led.png" alt=""       id="led" onclick="led_menu_togle()"><br>
+            <p id="menu_text">LED</p>
+
+            <img src="projektor.png" alt="" id="projektor" onclick="projektor_menu_togle()"><br>
+            <p id="menu_text">Projektor</p>
+            
+            <img src="tv.png" alt=""        id="tv" onclick="tv_menu_togle()"><br>
+            <p id="menu_text">TV</p>
+            
+
+    </center>
+</div>
+
+
+<div id="led_menu" style="display: none;">
+    <center>
+        <p id="tv_menu_text">LED:</p>
+        <img src="On-Off.png" alt="" onclick="ir('led/power')" id="pwr_btn" onmousedown="pwr_btn_select()" onmouseup="document.getElementById('pwr_btn').src = 'On-Off.png'">
+        
+        <img id="red" class="led_colors"    onclick="alert('comming soon!')" style="display:none;"></img>
+        <img id="green" class="led_colors"  onclick="alert('comming soon!')" style="display:none;"></img>
+        <img id="blue" class="led_colors"   onclick="alert('comming soon!')" style="display:none;"></img>
+        <img id="violet" class="led_colors" onclick="alert('comming soon!')" style="display:none;"></img>
+        <img id="orange" class="led_colors" onclick="alert('comming soon!')" style="display:none;"></img>
+        <img id="yellow" class="led_colors" onclick="alert('comming soon!')" style="display:none;"></img>
+
+    </center>     
+</div>
+
+
+<div id="projektor_menu" style="display: none;">
+    <center>
+        <p id="tv_menu_text">Projektor:</p>
+        <img src="On-Off.png" alt="" id="pwr_btn2" onclick="ir('projektor/power')" onmousedown="pwr_btn_select()" onmouseup="document.getElementById('pwr_btn2').src = 'On-Off.png'">
+
+    </center>
+</div>
+
+
+
+<div id="tv_menu" style="display: none;">
+
+    <center>
+        <p id="tv_menu_text">Please select TV brand:</p>
+        <img src="lg.png"        alt="" class="img" onclick="document.getElementById('tv_menu_lg')       .style='display: block;'; document.getElementById('tv_menu').style='display: none;' ">
+        <img src="samsung.png"   alt="" class="img" onclick="document.getElementById('tv_menu_samsung')  .style='display: block;'; document.getElementById('tv_menu').style='display: none;' ">
+        <img src="sony.png"      alt="" class="img" onclick="document.getElementById('tv_menu_sony')     .style='display: block;'; document.getElementById('tv_menu').style='display: none;' ">
+        <img src="panasonic.png" alt="" class="img" onclick="document.getElementById('tv_menu_panasonic').style='display: block;'; document.getElementById('tv_menu').style='display: none;' ">
+        <img src="grundig.png"   alt="" class="img" onclick="document.getElementById('tv_menu_grundig')  .style='display: block;'; document.getElementById('tv_menu').style='display: none;' ">
+        <img src="philips.png"   alt="" class="img" onclick="document.getElementById('tv_menu_philips')  .style='display: block;'; document.getElementById('tv_menu').style='display: none;' ">
+        <img src="all.png"       alt="" class="img" onclick="document.getElementById('tv_menu_all')      .style='display: block;'; document.getElementById('tv_menu').style='display: none;' ">
+        
+    </center>
+</div>
+
+
+<div id="tv_menu_lg" style="display:none;">
+    <center>
+        <p id="tv_menu_text">LG:</p>
+        <img src="On-Off.png" alt="" id="pwr_btn2" onclick="ir('lg')" onmousedown="pwr_btn_select()" onmouseup="document.getElementById('pwr_btn2').src = 'On-Off.png'">
+    </center>
+</div>
+
+<div id="tv_menu_samsung" style="display:none;">
+    <center>
+        <p id="tv_menu_text">Samsung:</p>
+        <img src="On-Off.png" alt="" id="pwr_btn2" onclick="ir('samsung')" onmousedown="pwr_btn_select()" onmouseup="document.getElementById('pwr_btn2').src = 'On-Off.png'">
+    </center>
+</div>
+
+<div id="tv_menu_sony" style="display:none;">
+    <center>
+        <p id="tv_menu_text">Sony:</p>
+        <img src="On-Off.png" alt="" id="pwr_btn2" onclick="ir('sony')" onmousedown="pwr_btn_select()" onmouseup="document.getElementById('pwr_btn2').src = 'On-Off.png'">
+    </center>
+</div>
+
+<div id="tv_menu_panasonic" style="display:none;">
+    <center>
+        <p id="tv_menu_text">Panasonic:</p>
+        <img src="On-Off.png" alt="" id="pwr_btn2" onclick="ir('panasonic')" onmousedown="pwr_btn_select()" onmouseup="document.getElementById('pwr_btn2').src = 'On-Off.png'">
+    </center>
+</div>
+
+<div id="tv_menu_grundig" style="display:none;">
+    <center>
+        <p id="tv_menu_text">Grundig:</p>
+        <img src="On-Off.png" alt="" id="pwr_btn2" onclick="ir('grundig')" onmousedown="pwr_btn_select()" onmouseup="document.getElementById('pwr_btn2').src = 'On-Off.png'">
+    </center>
+</div>
+
+<div id="tv_menu_philips" style="display:none;">
+    <center>
+        <p id="tv_menu_text">Philips:</p>
+        <img src="On-Off.png" alt="" id="pwr_btn2" onclick="ir('philips')" onmousedown="pwr_btn_select()" onmouseup="document.getElementById('pwr_btn2').src = 'On-Off.png'">
+    </center>
+</div>
+
+<div id="tv_menu_all" style="display:none;">
+    <center>
+        <p id="tv_menu_text">All:</p>
+        <img src="On-Off.png" alt="" id="pwr_btn2" onclick="ir('all')" onmousedown="pwr_btn_select()" onmouseup="document.getElementById('pwr_btn2').src = 'On-Off.png'">
+    </center>
+</div>
+
+
+
+</body>
+</html>
+
+
+
+
+
+<style>
+
+
+@font-face {
+    font-family: orbiton;
+    src: url(Orbitron-SemiBold.ttf);
+}
+
+
+html{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background: linear-gradient(rgb(255, 111, 0), rgb(255, 0, 0));
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+img{
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    margin-bottom: 0px;
+    background: transparent;
+}
+
+#tv_menu_text{
+    color: black;
+    font-size: 30px;
+    font-family: monospace;
+    margin-top: 60px;
+    font-family: orbiton;
+    
+}
+
+#main_menu_text{
+    color: black;
+    font-size: 30px;
+    font-family: monospace;
+    margin-top: 60px;
+    font-family: orbiton;
+    
+}
+
+#pwr_btn{
+    margin: 50px;
+    width: 100px;
+    height: 100px;
+
+}
+
+#pwr_btn2{
+    margin: 50px;
+    width: 100px;
+    height: 100px;
+    
+}
+
+#menu_text{
+    font-family: monospace;
+    font-size: 30px;
+    color: black;
+    margin-top: 0px;
+    font-family: orbiton;
+    
+}
+
+.led_colors{
+    width: 100px;
+    height: 100px;
+    background: black;
+    margin: 5px;
+    border-radius: 20px;
+    border-width: 5px;
+    border-color: black;
+    border-style: solid;
+}
+
+#red{
+    background: red;
+}
+#green{
+    background: rgb(0, 255, 30);
+}
+#blue{
+    background: rgb(13, 0, 255);
+}
+
+#violet{
+    background: rgb(157, 0, 255);
+}
+#orange{
+    background: rgb(255, 115, 0);
+}
+#yellow{
+    background: rgb(234, 255, 0);
+}
+
+#back_btn{
+    position: absolute;
+    left: 10px;
+    bottom: 20px;
+    width: 80px;
+    height: 80px;
+}
+
+</style>
+
+<script>
+function ir(device){
+    console.log(device)
+    if(device == "all"){
+        document.getElementById("tv/all").play()
+    }
+    else if(device == "lg"){
+        document.getElementById("tv/lg").play()
+    }
+    else if(device == "samsung"){
+        document.getElementById("tv/samsung").play()
+    }    
+    else if(device == "sony"){
+        document.getElementById("tv/sony").play()
+    }    
+    else if(device == "panasonic"){
+        document.getElementById("tv/panasonic").play()
+    }    
+    else if(device == "grundig"){
+        document.getElementById("tv/grundig").play()
+    }    
+    else if(device == "philips"){
+        document.getElementById("tv/philips").play()
+    }
+    else if(device == "led/power"){
+        document.getElementById("led/power").play()
+    }
+    else if(device == "projektor/power"){
+        document.getElementById("projektor/power").play()
+    }
+    
+}
+
+function led_menu_togle(){
+    document.getElementById("led_menu").style.display = "block"
+    document.getElementById("main_menu").style.display = "none"
+    
+}
+
+function projektor_menu_togle(){
+    document.getElementById("projektor_menu").style.display = "block"
+    document.getElementById("main_menu").style.display = "none"
+    
+}
+
+function tv_menu_togle(){
+    document.getElementById("tv_menu").style.display = "block"
+    document.getElementById("main_menu").style.display = "none"
+    
+}
+
+function pwr_btn_select(){
+    document.getElementById("pwr_btn").src = "On-Off-selected.png"
+    document.getElementById("pwr_btn2").src = "On-Off-selected.png"
+    
+}
+
+
+function reset(){
+    document.getElementById("tv_menu").style.display="none"
+    document.getElementById("led_menu").style.display="none"
+    document.getElementById("projektor_menu").style.display="none"
+
+    document.getElementById("tv_menu_lg").style.display="none"
+    document.getElementById("tv_menu_samsung").style.display="none"
+    document.getElementById("tv_menu_sony").style.display="none"
+    document.getElementById("tv_menu_panasonic").style.display="none"
+    document.getElementById("tv_menu_grundig").style.display="none"
+    document.getElementById("tv_menu_philips").style.display="none"
+    document.getElementById("tv_menu_all").style.display="none"
+
+
+    document.getElementById("main_menu").style.display="block"
+    
+}
+
+
+</script>
