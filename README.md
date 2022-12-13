@@ -1,5 +1,9 @@
 # IR-Flip
 
+If you want the apk download:
+https://github.com/notLe0nard/IR-Flip/raw/main/ir-flip-beta0.2.1.apk
+
+
 IR-Flip is a projekt written in HTML,CSS and JavaScript.
 It is basicly a soundboard that plays .wav files.
 These files are designed so that when an IR-Blaster
